@@ -1,0 +1,25 @@
+[package]
+name = "grex_nc_dump_test"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+color-eyre = "0.6.3"
+hifitime = "3.9.0"
+ndarray = "0.15"
+netcdf = "0.9"
+num-complex = { version = "0.4", features = ["rand"] }
+rand = "0.8.5"
+rayon = "1.9.0"
+
+[patch.crates-io]
+hdf5-sys = { git = "https://github.com/aldanor/hdf5-rust" }
+
+[dev-dependencies]
+criterion = { version = "0.4", features = ["html_reports"] }
+
+[[bench]]
+name = "my_benchmark"
+harness = false
